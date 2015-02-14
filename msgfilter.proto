@@ -1,0 +1,17 @@
+// msg_filter.proto
+
+option py_generic_services = true; // This is required
+message MsgFilterRequest {
+    required int32 type = 1;
+    required string msg = 2;
+}
+
+message MsgFilterResponse {
+    required int32 error_code = 1;
+    required string desc = 2;
+    required int32 ret = 3;
+}
+
+service MsgFilterService {
+  rpc MsgMethod (MsgFilterRequest) returns (MsgFilterResponse);
+}
