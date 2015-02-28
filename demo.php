@@ -5,7 +5,7 @@ class MsgFilter
     private $_sock;
     private $_ip;
     private $_port;
-    public function init($ip = "127.0.0.1", $port = "8081"){
+    public function init($ip = "127.0.0.1", $port = "8080"){
         $this->_ip = $ip;
         $this->_port = $port;
     }
@@ -33,7 +33,7 @@ class MsgFilter
 
 $obj = new MsgFilter();
 $obj->init();
-echo $obj->filter(0, "apple");
+echo "apple\t".$obj->filter(0, "apple")."\n";
 echo $obj->filter(0, "中国人");
 echo $obj->filter(0, "共产党");
 echo $obj->filter(0, "中国共21产党");

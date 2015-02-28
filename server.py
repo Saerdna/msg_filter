@@ -4,7 +4,6 @@ import sys
 import string
 import getopt
 import logging
-import ahocorasick
 import msgfilter_pb2
 import autoMachine
 from gevent import server
@@ -16,11 +15,12 @@ from multiprocessing import Process, current_process, cpu_count
 
 global ac_machine
 
-logger = logging.getLogger('mylogger')
+logger = logging.getLogger('server_log')
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')  
 
 notice_log = logging.FileHandler('msg.log')
 notice_log.setFormatter(formatter)
+logger.setLevel(logging.DEBUG)
 logger.addHandler(notice_log)
 
 
