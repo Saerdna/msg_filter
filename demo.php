@@ -34,7 +34,7 @@ class MsgFilter
 $obj = new MsgFilter();
 $obj->init();
 echo "apple\t".$obj->filter(0, "apple")."\n";
-echo $obj->filter(0, "中国人");
-echo $obj->filter(0, "共产党");
-echo $obj->filter(0, "中国共21产党");
+echo "中国人\t".$obj->filter(0, "中国人")."\n";
+echo "共产党\t".$obj->filter(0, "共产党")."\n";
+echo "中国共21产党".$obj->filter(0, "中国共21产党")."\n";
 
