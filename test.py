@@ -36,7 +36,7 @@ def serve_forever(listener):
     note('starting server')
     server.StreamServer(listener, echo).serve_forever()
      
-number_of_processes = 1
+number_of_processes = 3
 print 'Starting %s processes' % number_of_processes
 for i in range(number_of_processes):
     Process(target=serve_forever, args=(listener,)).start()
